@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an unusual issue related to unexpected behavior when using `:nth-child()` with negative selectors within a nested element structure:
+
+```css
+div {
+  display: flex;
+}
+
+div > div:nth-child(-n+3) {
+  background-color: lightblue;
+}
+
+div > div > div:nth-child(-n+2) {
+  background-color: lightcoral;
+}
+```
+
+This CSS aims to style nested divs differently. However, the negative selectors in `:nth-child(-n+3)` and `:nth-child(-n+2)` might not behave as expected in all browsers, potentially leading to inconsistent styling.  The unexpected behavior can manifest as incorrect selection of elements or complete failure to apply the styles.
