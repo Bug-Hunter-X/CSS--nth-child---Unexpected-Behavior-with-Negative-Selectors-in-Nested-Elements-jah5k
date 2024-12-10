@@ -1,0 +1,17 @@
+A more reliable approach to achieve the same visual outcome without using negative selectors in `:nth-child()` is to use more specific selectors or a different CSS technique:
+
+```css
+div {
+  display: flex;
+}
+
+div > div:nth-child(1), div > div:nth-child(2), div > div:nth-child(3){
+  background-color: lightblue;
+}
+
+div > div > div:nth-child(1), div > div > div:nth-child(2){
+  background-color: lightcoral;
+}
+```
+
+This revised CSS targets specific children directly, avoiding the potential inconsistencies associated with negative selectors within nested structures.  This method ensures consistent and predictable styling across different browsers.
